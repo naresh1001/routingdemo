@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'routingdemo';
+  public hasOne = false;
+  public hasTwo = false;
+public hasThree = false;
+
   students:any[] = [
     {"id":123,"name":"Nirmit","dept":"MCA"},
     {"id":124,"name":"Rajat","dept":"MBA"},
@@ -15,6 +19,7 @@ export class AppComponent {
     {"id":127,"name":"Ankit","dept":"MCA"},
     {"id":128,"name":"Sumit","dept":"MBA"}
   ];
+
    getColor(branch){
         switch (branch) {
           case 'MCA':
@@ -26,6 +31,28 @@ export class AppComponent {
           default:
             break;
         }
+  }
+
+  getCssClasses(flag){
+          let cssClasses;
+          if(flag=="value"){
+            cssClasses = {
+                "two":true,
+                "three":true 
+            }
+          }else{
+            cssClasses = {
+              "one":true,
+              "three":true 
+          }
+          }
+          return cssClasses;
+      }
+    
+
+  public cssObject = {
+    "one" : !this.hasOne,
+    "three" : !this.hasThree
   }
 
 }

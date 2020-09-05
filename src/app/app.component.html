@@ -6,9 +6,15 @@
  -->
  <!--Css-->
  <table>
-     <tr [ngStyle]= "{'background-color': getColor(s.dept)}" *ngFor = "let s of students">
+     <tr  [ngStyle]= "{'background-color': getColor(s.dept)}" *ngFor = "let s of students">
          <td>{{ s.id }}</td>
          <td>{{ s.name }}</td>
          <td>{{ s.dept }}</td>
      </tr>
  </table>
+<!--ng class-->
+<p class = 'one two three'>
+    KIET Group of institutions.
+</p>
+<h2 [ngClass] = "cssObject">It is located in Ghaziabad</h2>
+<h2 [ngClass]="getCssClasses('value1')"> It offers many courses </h2>
